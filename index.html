@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Student & Faculty Management System</h1>
+</header>
+
+<nav>
+    <button onclick="showSection('students')">Students</button>
+    <button onclick="showSection('faculty')">Faculty</button>
+</nav>
+
+<!-- STUDENT SECTION -->
+<section id="students" class="active-section">
+
+    <div class="dashboard">
+        <div class="card">
+            <h3>Total Students</h3>
+            <p id="totalCount">0</p>
+        </div>
+        <div class="card">
+            <h3>Passed</h3>
+            <p id="passCount">0</p>
+        </div>
+        <div class="card">
+            <h3>Failed</h3>
+            <p id="failCount">0</p>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h2 id="formTitle">Add Student</h2>
+
+        <form id="studentForm">
+            <input type="text" id="name" placeholder="Student Name" required>
+            <input type="text" id="roll" placeholder="Roll Number" required>
+            <input type="text" id="course" placeholder="Course" required>
+            <input type="number" id="marks" placeholder="Marks (0-100)" min="0" max="100" required>
+
+            <button type="submit" id="submitBtn">Add Student</button>
+        </form>
+    </div>
+
+    <div class="table-section">
+        <h2>Student Records</h2>
+        <input type="text" id="search" placeholder="Search by Name or Roll">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll</th>
+                    <th>Course</th>
+                    <th>Marks</th>
+                    <th>Status</th>
+                    <th>Attendance</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable"></tbody>
+        </table>
+    </div>
+
+</section>
+
+<!-- FACULTY SECTION -->
+<section id="faculty" class="hidden-section">
+
+    <div class="form-section">
+        <h2>Add Faculty</h2>
+
+        <form id="facultyForm">
+            <input type="text" id="fname" placeholder="Faculty Name" required>
+            <input type="text" id="department" placeholder="Department" required>
+            <input type="email" id="email" placeholder="Email" required>
+
+            <button type="submit">Add Faculty</button>
+        </form>
+    </div>
+
+    <div class="table-section">
+        <h2>Faculty Records</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="facultyTable"></tbody>
+        </table>
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
